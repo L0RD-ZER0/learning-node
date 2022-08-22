@@ -8,7 +8,8 @@ const http = require('http');
 // http.createServer(requestListener);
 
 const server = http.createServer((req, res) => {
-    console.log(req, res);
+    // console.log(req, res);
+    console.log(req.url, req.method, req.headers);
     // process.exit();
 });
 
