@@ -1,4 +1,5 @@
-import express, { Express } from 'express';
+import Express from 'express';
+import * as express from 'express';
 import bodyParser from 'body-parser';
 import adminRoutes from './routes/admin';
 import shopRoutes from './routes/shop';
@@ -6,7 +7,7 @@ import { makePath } from "./utils";
 
 
 const PORT = process.env.PORT || '3000';
-const app: Express = express();
+const app: express.Express = Express();
 
 // app.use((req, res, next) => {
 //   console.log('In the middleware');
@@ -14,6 +15,7 @@ const app: Express = express();
 // });
 
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(express.static(makePath('src', 'public')))
 
 app.use('/admin', adminRoutes);
 app.use(shopRoutes);
