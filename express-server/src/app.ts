@@ -2,6 +2,7 @@ import express, { Express } from 'express';
 import bodyParser from 'body-parser';
 import adminRoutes from './routes/admin';
 import shopRoutes from './routes/shop';
+import { makePath } from "./utils";
 
 
 const PORT = process.env.PORT || '3000';
@@ -18,7 +19,8 @@ app.use('/admin', adminRoutes);
 app.use(shopRoutes);
 
 app.use((req, res) => {
-  res.status(404).send('<h1>Page not found.</h1>');
+  // res.status(404).send('<h1>Page not found.</h1>');
+  res.sendFile(makePath('src', 'views', '404.html'));
 });
 
 app.listen(PORT, () => console.log(`Server started at localhost:${ PORT }`));
