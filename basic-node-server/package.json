@@ -1,0 +1,12 @@
+{
+  "name": "basic-node-server",
+  "version": "1.0.0",
+  "description": "A basic vanilla Node.js server.",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "start-server": "npm start"
+  },
+  "author": "L0RD-ZER0",
+  "license": "ISC"
+}
