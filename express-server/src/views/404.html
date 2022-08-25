@@ -6,9 +6,60 @@
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Page Not Found</title>
+  <style>
+    :root {
+      --main-color: #eacb30;
+      --item-color: #404040;
+      --active-color: #4000bb;
+    }
+    body {
+      font-family: sans-serif;
+      margin: 0;
+    }
+    main {
+      padding: 1rem;
+    }
+    .main-header {
+      width: 100%;
+      height: 1.5rem;
+      background-color: var(--main-color);
+      padding: 1.5rem;
+    }
+    .main-header__nav {
+      height: 100%;
+      display: flex;
+      align-items: center;
+    }
+    .main-header__item-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+    .main-header__item a {
+      text-decoration: none;
+      color: var(--item-color);
+      margin: 1rem;
+    }
+    .main-header__item a:hover,
+    .main-header__item a:active,
+    .main-header__item a.active {
+      color: var(--active-color);
+    }
+  </style>
 </head>
-<body style="text-align: center">
-  <h3>404: The page you were looking for was not found on the server.</h3>
-  <a href="/"><h6>Click here to return to home.</h6></a>
+<body>
+  <header class="main-header">
+  <nav class="main-header__nav">
+    <ul class="main-header__item-list">
+      <li class="main-header__item"><a class="active" href="/">Shop</a></li>
+      <li class="main-header__item"><a href="/admin/add-product">Add-Product</a></li>
+    </ul>
+  </nav>
+</header>
+  <div style="text-align: center">
+    <h2>404: The page you were looking for was not found on the server.</h2>
+    <a href="/" style="text-decoration: none"><h4>Click here to return to home.</h4></a>
+  </div>
 </body>
 </html>
