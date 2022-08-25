@@ -8,5 +8,8 @@
     "start-server": "npm start"
   },
   "author": "L0RD-ZER0",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  }
 }
