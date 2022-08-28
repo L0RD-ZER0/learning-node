@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { makePath } from "../utils";
+// import { makePath } from "../utils";
 
 import { products } from "./admin";
 
@@ -10,7 +10,8 @@ router.get('/', (req, res) => {  // matching is done on the basis of starts-with
   // console.log('In another middleware');
   // res.send('<h1>Hello from Express!</h1>');
   console.log('shop.js:', products);
-  res.sendFile(makePath('src', 'views', 'shop.html'));
+  // res.sendFile(makePath('src', 'views', 'shop.html'));
+  res.render('shop');
 });
 
 export default router;

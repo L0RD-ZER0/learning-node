@@ -1,6 +1,9 @@
 import Express from 'express';
 import * as express from 'express';
 import bodyParser from 'body-parser';
+
+
+
 import adminRoutes from './routes/admin';
 import shopRoutes from './routes/shop';
 import { makePath } from "./utils";
@@ -8,6 +11,9 @@ import { makePath } from "./utils";
 
 const PORT = process.env.PORT || '3000';
 const app: express.Express = Express();
+
+app.set('view engine', 'pug');
+app.set('views', makePath('src', 'views'));
 
 // app.use((req, res, next) => {
 //   console.log('In the middleware');
