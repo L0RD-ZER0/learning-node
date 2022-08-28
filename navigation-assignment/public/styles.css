@@ -1,0 +1,26 @@
+body {
+    margin: 0;
+    height: 100%;
+}
+
+ul {
+    background: aquamarine;
+    height: 100%;
+    margin: 0;
+    padding: 1rem;
+    max-height: 2.5rem;
+}
+
+li {
+    margin: .5rem 1rem;
+    display: inline-flex;
+}
+
+li a {
+    text-decoration: none;
+    text-emphasis: black;
+}
+
+main {
+    padding: 2rem
+}
