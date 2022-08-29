@@ -1,7 +1,7 @@
 import Express from 'express';
 import * as express from 'express';
 import bodyParser from 'body-parser';
-
+import { engine as expressHbs } from 'express-handlebars';
 
 
 import adminRoutes from './routes/admin';
@@ -12,7 +12,8 @@ import { makePath } from "./utils";
 const PORT = process.env.PORT || '3000';
 const app: express.Express = Express();
 
-app.set('view engine', 'pug');
+app.engine('hbs', expressHbs());
+app.set('view engine', 'hbs');
 app.set('views', makePath('src', 'views'));
 
 // app.use((req, res, next) => {
