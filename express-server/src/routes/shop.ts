@@ -11,7 +11,7 @@ router.get('/', (req, res) => {  // matching is done on the basis of starts-with
   // res.send('<h1>Hello from Express!</h1>');
   // console.log('shop.js:', products);
   // res.sendFile(makePath('src', 'views', 'shop.html'));
-  res.render('shop', { prods: products, docTitle: 'Shop' });
+  res.render('shop', { prods: products, pageTitle: 'Shop', path: '/' });
 });
 
 export default router;

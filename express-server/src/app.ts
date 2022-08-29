@@ -29,7 +29,7 @@ app.use(shopRoutes);
 app.use((req, res) => {
   // res.status(404).send('<h1>Page not found.</h1>');
   // res.sendFile(makePath('src', 'views', '404.html'));
-  res.status(404).render('404');
+  res.status(404).render('404', { pageTitle: 'Page Not Found!' });
 });
 
 app.listen(PORT, () => console.log(`Server started at localhost:${ PORT }`));
