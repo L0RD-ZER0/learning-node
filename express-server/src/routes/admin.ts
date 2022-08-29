@@ -10,7 +10,13 @@ router.get('/add-product', (req, res) => {  // matching is done on the basis of 
   // console.log('In another middleware');
   // res.send('<form action="/admin/add-product" method="post"><input type="text" name="title"><button type="submit">Add Product</button></form>');
   // res.sendFile(makePath('src', 'views', 'add-product.html'));
-  res.render('add-product', { pageTitle: 'Add Product', path: '/admin/add-product' });
+  // res.render('add-product', { pageTitle: 'Add Product', path: '/admin/add-product' });
+  res.render('add-product', {
+    pageTitle: 'Add Product',
+    activeAddProduct: true,
+    fomrsCSS: true,
+    productCSS: true,
+  });
 });
 
 router.post('/add-product', (req, res) => {

@@ -12,7 +12,10 @@ import { makePath } from "./utils";
 const PORT = process.env.PORT || '3000';
 const app: express.Express = Express();
 
-app.engine('hbs', expressHbs());
+app.engine('hbs', expressHbs({
+  layoutsDir: makePath('src', 'views', 'layouts'),
+  defaultLayout: 'main',
+}));
 app.set('view engine', 'hbs');
 app.set('views', makePath('src', 'views'));
 
