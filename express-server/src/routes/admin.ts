@@ -1,10 +1,11 @@
 import { Router } from "express";
 import { makePath } from "../utils";
+import { Product } from "../interfaces/product";
 
 
 export const router = Router();
 
-export const products: string[] = [];
+export const products: Product[] = [];
 
 router.get('/add-product', (req, res) => {  // matching is done on the basis of starts-with
   // console.log('In another middleware');
@@ -14,7 +15,8 @@ router.get('/add-product', (req, res) => {  // matching is done on the basis of 
 
 router.post('/add-product', (req, res) => {
   console.log(req.body);
-  products.push(req.body.title);
+  // products.push(req.body.title);
+  products.push({ title: req.body.title });
   res.redirect('/');
 });
 

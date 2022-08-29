@@ -9,9 +9,9 @@ export const router = Router();
 router.get('/', (req, res) => {  // matching is done on the basis of starts-with
   // console.log('In another middleware');
   // res.send('<h1>Hello from Express!</h1>');
-  console.log('shop.js:', products);
+  // console.log('shop.js:', products);
   // res.sendFile(makePath('src', 'views', 'shop.html'));
-  res.render('shop');
+  res.render('shop', { prods: products, docTitle: 'Shop' });
 });
 
 export default router;
