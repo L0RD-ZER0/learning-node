@@ -17,6 +17,7 @@ router.get('/', (req, res) => {  // matching is done on the basis of starts-with
     pageTitle: 'Shop',
     activeShop: true,
     productCSS: true,
+    path: '/',
   });
 });
 

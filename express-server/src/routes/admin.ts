@@ -16,6 +16,7 @@ router.get('/add-product', (req, res) => {  // matching is done on the basis of 
     activeAddProduct: true,
     fomrsCSS: true,
     productCSS: true,
+    path: '/admin/add-product'
   });
 });
 
