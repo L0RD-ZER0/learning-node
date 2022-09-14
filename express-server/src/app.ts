@@ -1,7 +1,7 @@
 import Express from 'express';
 import * as express from 'express';
 import bodyParser from 'body-parser';
-import { engine as expressHbs } from 'express-handlebars';
+// import { engine as expressHbs } from 'express-handlebars';
 
 
 import adminRoutes from './routes/admin';
@@ -12,11 +12,12 @@ import { makePath } from "./utils";
 const PORT = process.env.PORT || '3000';
 const app: express.Express = Express();
 
-app.engine('hbs', expressHbs({
-  layoutsDir: makePath('src', 'views', 'layouts'),
-  defaultLayout: 'main',
-}));
-app.set('view engine', 'hbs');
+// app.engine('hbs', expressHbs({
+//   layoutsDir: makePath('src', 'views', 'layouts'),
+//   defaultLayout: 'main',
+// }));
+// app.set('view engine', 'hbs');
+app.set('view engine', 'ejs');
 app.set('views', makePath('src', 'views'));
 
 // app.use((req, res, next) => {
