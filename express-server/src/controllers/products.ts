@@ -1,7 +1,6 @@
 import { Request, Response } from "express";
-import { Product } from "../interfaces/product";
+import Product from "../models/product";
 
-export const products: Product[] = [];
 
 export const getAddProduct = (req: Request, res: Response) => {  // matching is done on the basis of starts-with
   res.render('add-product', {
@@ -15,13 +14,14 @@ export const getAddProduct = (req: Request, res: Response) => {  // matching is 
 
 export const postAddProduct = (req: Request, res: Response) => {
   console.log(req.body);
-  products.push({ title: req.body.title });
+  const product = new Product(req.body.title);
+  product.save();
   res.redirect('/');
 }
 
 export const getProducts = (req: Request, res: Response) => {  // matching is done on the basis of starts-with
   res.render('shop', {
-    prods: products,
+    prods: Product.fetchAll(),
     pageTitle: 'Shop',
     activeShop: true,
     productCSS: true,
