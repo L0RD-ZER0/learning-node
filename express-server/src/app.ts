@@ -6,6 +6,7 @@ import bodyParser from 'body-parser';
 import adminRoutes from './routes/admin';
 import shopRoutes from './routes/shop';
 import { makePath } from "./utils";
+import * as errorController from "./controllers/error";
 
 
 const PORT = process.env.PORT || '3000';
@@ -22,11 +23,6 @@ app.use(express.static(makePath('src', 'public')))
 app.use('/admin', adminRoutes);
 app.use(shopRoutes);
 
-app.use((req, res) => {
-  res.status(404).render('404', {
-    pageTitle: 'Page Not Found!',
-    path: req.url,
-  });
-});
+app.use(errorController.get404);
 
 app.listen(PORT, () => console.log(`Server started at localhost:${ PORT }`));
