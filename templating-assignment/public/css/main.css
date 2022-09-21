@@ -1,0 +1,123 @@
+:root {
+    --nav-color: #9f9f9f;
+    --nav-text-color: #e0e0e0;
+    /*--nav-emphasis-color: #ff8787;*/
+    --nav-emphasis-color: red;
+    --active-color: #fff56c;
+    --label-text: #808080;
+    --input-active-color: var(--nav-emphasis-color);
+    --submit-button-color: var(--nav-emphasis-color);
+    --submit-button-hover-color: #c0c0c0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roberto', sans-serif;
+    background: #f8f8f8;
+}
+
+nav {
+    display: block;
+}
+nav ul {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    margin: 0 0;
+    padding: 1rem 0;
+    background: var(--nav-color);
+}
+
+nav ul li {
+    list-style: none;
+    margin: 1rem;
+    cursor: pointer;
+}
+
+nav ul li a {
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--nav-text-color);
+    transition-duration: 0.25s;
+}
+
+.active {
+    color: var(--active-color);
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+    font-weight: bold;
+    color: var(--nav-emphasis-color);
+    transition: ease-in-out;
+    transition-duration: 0.3s;
+}
+
+main {
+    margin: 2rem;
+}
+
+.content-404 {
+    text-align: center;
+}
+
+form {
+    text-align: center;
+}
+
+.form-control {
+    /*margin: 1rem;*/
+    text-align: left;
+    width: 75%;
+    margin: auto;
+}
+
+.form-control label {
+    color: var(--label-text);
+    font-size: 0.75rem;
+    display: block;
+    margin: 0.2rem;
+}
+
+.form-control input {
+    width: 100%;
+    border-radius: 5%;
+    outline: none;
+    padding: 0.25rem;
+    background: none;
+}
+
+.form-control input:focus {
+    border: 1px solid var(--input-active-color);
+    transition: ease-in;
+    transition-duration: 0.25s;
+}
+
+form button[type=submit] {
+    background: none;
+    color: var(--submit-button-color);
+    border: 1px solid var(--submit-button-color);
+    border-radius: 15%;
+    transition-duration: 0.25s;
+}
+
+form button[type=submit] {
+    background: none;
+    color: var(--submit-button-color);
+    border: 1px solid var(--submit-button-color);
+    border-radius: 15%;
+    margin: 0.5rem;
+    padding: 0.5rem;
+    font-weight: bold;
+}
+
+form button:hover[type=submit] {
+    background: var(--submit-button-color);
+    color: var(--submit-button-hover-color);
+    border-color: var(--submit-button-hover-color);
+}
+
+ul.user-list li::marker {
+    content: '▷ ';
+}
